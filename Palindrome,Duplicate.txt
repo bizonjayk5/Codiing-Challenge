@@ -1,0 +1,46 @@
+ Palindrome number
+ 
+ public class PalindromeNumber {
+public static void main(String[] args) {
+int number = 454;
+int reverse = 0;
+int origin = number;
+
+while (number > 0)		{
+reverse = reverse * 10 + number % 10; 
+number = number / 10;		}
+if (origin == reverse) System.out.println(origin + " is palindrome number ");
+else			System.out.println(origin + " is not palindrome number ");
+}
+}
+
+
+Duplicate numbers(Array)
+
+import java.util.Arrays;
+public class DuplicateNumbers			{
+public static void main(String[] args) {
+int[] numbers = {50, 55, 21, 55, 2, 12, 21, 21, 21, 21};
+Arrays.sort(numbers);			//2, 12, 21, 21, 21, 21, 50, 51
+for (int i = 1; i < numbers.length; i++)  {
+if (numbers[i] == numbers[i - 1])			{
+System.out.println("Duplicate: " + numbers[i]);  }
+}
+}
+}
+
+
+ Duplicate using HashSet
+ 
+ import java.util.*;
+ 	public class DuplicateNumbers  {
+ 	public static void main(String[] args)  {
+ 	int[] numbers = {50, 55, 21, 55, 2, 12, 21, 21, 21, 21};
+ 	
+ 	Set<Integer> set = new HashSet<Integer> ();
+ 	for (int n : numbers)		{
+ 	boolean unique = set.add(n);
+ 	if (!unique)			// (!unique == false)
+ 	System.out.println("Duplicate: " + n);}
+ 	}
+ 	} 
